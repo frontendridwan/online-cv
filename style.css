@@ -165,8 +165,7 @@ body {
   color: var(--font-color-secondary);
 }
 
-.home-button,
-.home-icon {
+.home-button {
   display: flex;
 }
 
@@ -202,6 +201,12 @@ body {
   background-color: var(--primary-color);
   color: var(--font-color-button);
   border: 1px solid transparent;
+}
+
+.home-icon {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
 }
 
 .home-icon a {
