@@ -331,13 +331,13 @@ body {
   }
 
   .home {
-    height: 140vh;
+    height: 130vh;
   }
 
   .home-content {
     height: 55%;
     width: auto;
-    padding: 100px 0 70px;
+    padding: 100px 0 30px;
   }
 
   .home-image {
