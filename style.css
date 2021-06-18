@@ -339,13 +339,13 @@ body {
   }
 
   .home {
-    height: 130vh;
+    height: 125vh;
   }
 
   .home-content {
     height: 55%;
     width: auto;
-    padding: 100px 0 30px;
+    padding: 120px 0 30px;
   }
 
   .home-image {
