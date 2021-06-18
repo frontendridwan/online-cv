@@ -134,6 +134,7 @@ body {
   padding: 180px 0 70px;
   height: auto;
   justify-content: space-between;
+  transition: 1s ease;
 }
 
 .home-title {
@@ -308,7 +309,7 @@ body {
   .navbar-container ul {
     position: absolute;
     right: 0;
-    top: -450px;
+    top: -550px;
     height: 50vh;
     width: 100%;
     justify-content: space-evenly;
@@ -336,15 +337,12 @@ body {
   .home-content {
     height: 55%;
     width: auto;
-    /* background-color: red;
-    opacity: 0.2; */
+    padding: 100px 0 70px;
   }
 
   .home-image {
     height: 45%;
     width: auto;
-    background-color: blue;
-    opacity: 0.2;
   }
 }
 
