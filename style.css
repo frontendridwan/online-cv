@@ -1,0 +1,298 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:root {
+  /* Light Mode */
+  --bg-color: #fafafa;
+  --font-color-primary: #212121;
+  --font-color-secondary: #606163;
+  --font-color-button: #ffffff;
+  --primary-color: #3c5ba7;
+}
+
+/* dark-mode */
+.dark-theme {
+  --bg-color: #2b2b2b;
+  --font-color-primary: #f2f2f2;
+  --font-color-secondary: #bfbfbf;
+  --font-color-button: #2b2b2b;
+}
+
+/* navbar */
+.navbar {
+  position: absolute;
+  display: flex;
+  background-color: var(--bg-color);
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.3s;
+  /* overflow: hidden; */
+}
+
+.navbar-container {
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  width: 70px;
+  height: auto;
+  cursor: pointer;
+}
+
+.navbar-container ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-container label i {
+  color: var(--font-color-secondary);
+  cursor: pointer;
+}
+
+.navbar-container label i:hover {
+  color: var(--primary-color);
+}
+
+.navbar-container ul li {
+  margin: 0px 18px;
+}
+
+.navbar-container ul li a,
+.navbar-container ul li i {
+  font-weight: 500;
+  color: var(--font-color-secondary);
+  cursor: pointer;
+}
+
+.navbar-container ul li a.active,
+.navbar-container ul li a:hover,
+.navbar-container ul li i:hover {
+  color: var(--primary-color);
+}
+
+.navbar-container ul li a.active::after,
+.navbar-container ul li a:hover::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid var(--primary-color);
+  width: 75%;
+  margin: auto;
+  padding-bottom: 5px;
+  margin-bottom: -8px;
+}
+
+.checkbtn {
+  font-size: 23px;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* home */
+.home {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  background-color: var(--bg-color);
+  z-index: 5;
+}
+
+.home-container {
+  display: flex;
+  width: 85%;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 180px 0 70px;
+  height: auto;
+  justify-content: space-between;
+}
+
+.home-title {
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  justify-content: space-between;
+}
+
+.home-title h1 {
+  font-size: 45px;
+  color: var(--font-color-primary);
+}
+
+.home-title h1 span {
+  color: var(--primary-color);
+}
+
+.home-title p {
+  color: var(--font-color-secondary);
+}
+
+.home-button,
+.home-icon {
+  display: flex;
+}
+
+.home-button a.block-button {
+  background: var(--primary-color);
+  padding: 10px 15px;
+  color: var(--font-color-button);
+  display: inline-block;
+  border-radius: 5px;
+  margin-right: 20px;
+  border: 1px solid transparent;
+  transition: 0.5s ease;
+}
+
+.home-button a.block-button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.home-button a.outline-button {
+  background: transparent;
+  padding: 10px 15px;
+  color: var(--primary-color);
+  display: inline-block;
+  border-radius: 5px;
+  margin-right: 20px;
+  border: 1px solid var(--primary-color);
+  transition: 0.5s ease;
+}
+
+.home-button a.outline-button:hover {
+  background-color: var(--primary-color);
+  color: var(--font-color-button);
+  border: 1px solid transparent;
+}
+
+.home-icon a {
+  font-size: 20px;
+  color: var(--font-color-secondary);
+  margin: 0 12px 0 0;
+}
+
+.home-icon a:hover {
+  color: var(--primary-color);
+}
+
+.home-image {
+  width: 50%;
+  height: auto;
+  background-color: blue;
+  opacity: 0.2;
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+  .home-title h1 {
+    font-size: 40px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+}
+
+@media (max-width: 952px) {
+  .navbar-container ul li {
+    margin: 0px 15px;
+  }
+
+  .home-container {
+    width: 90%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .navbar-container {
+    width: 90%;
+  }
+
+  .navbar-container ul li {
+    margin: 0px 12px;
+  }
+
+  .navbar-container ul li a,
+  .navbar-container ul li i {
+    font-size: 14px;
+  }
+}
+
+/* Small devices (landscape phones, 662px and up) */
+@media (max-width: 662px) {
+  .checkbtn {
+    display: flex;
+  }
+
+  .navbar-container ul {
+    position: absolute;
+    right: 0;
+    top: -450px;
+    height: 50vh;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    z-index: 8;
+    margin-top: 68px;
+    transition: all 0.3s;
+    border-radius: 0 0 30px 30px;
+  }
+
+  #check:checked ~ ul.slide {
+    top: 0;
+  }
+
+  .home-container {
+    flex-direction: column;
+  }
+
+  .home-content {
+    height: 50%;
+    width: auto;
+    background-color: red;
+    opacity: 0.2;
+  }
+
+  .home-image {
+    height: 50%;
+    width: auto;
+    background-color: blue;
+    opacity: 0.2;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+}

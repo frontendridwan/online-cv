@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontendRidwan</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <label class="logo">
+        <a href=""><img src="brand.svg" class="brand-logo" id="brand-logo"></img></a>
+      </label>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn"><i class="fas fa-bars" id="list-menu"></i></label>
+      <ul class="slide">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><i class="fas fa-moon" id="icon-theme"></i></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- home -->
+  <section class="home">
+    <div class="home-container">
+      <div class="home-content">
+        <div class="home-title">
+          <h1>Assalamu'alaikum,<br />
+            I'm Muhammad<span> Ridwan </span>Pratama</h1>
+          <p>IU / UX, Graphic Designer, Full Stack Website Developer</p>
+        </div>
+        <div class="home-button">
+          <a href="" class="block-button">Hire Me</a>
+          <a href="" class="outline-button">Download CV</a>
+        </div>
+        <div class="home-icon">
+          <a href="https://instagram.com/frontendridwan" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/muhridwan23" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/muhammad-ridwan-pratama/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://gitlab.com/muhridwan23" target="_blank"><i class="fab fa-gitlab"></i></a>
+          <a href="https://dribbble.com/muhridwan" target="_blank"><i class="fab fa-dribbble"></i></a>
+          <a href="https://www.behance.net/muhamadridwanpratama" target="_blank"><i class="fab fa-behance"></i></a>
+        </div>
+      </div>
+      <div class="home-image"></div>
+    </div>
+  </section>
+
+
+</body>
+
+<script>
+  var ListMenu = document.getElementById("list-menu");
+
+  ListMenu.onclick = function(){
+
+    if(ListMenu.classList.contains("fa-bars")) {
+      ListMenu.classList.remove("fa-bars");
+      ListMenu.classList.add("fa-times");
+    } else {
+      ListMenu.classList.remove("fa-times");
+      ListMenu.classList.add("fa-bars");
+    }
+  }
+
+  var iconTheme = document.getElementById("icon-theme");
+  var brand = document.getElementById("brand-logo");
+  // var pola = document.getElementById("bg-pola1");
+
+    iconTheme.onclick = function(){
+      document.body.classList.toggle("dark-theme");
+
+      if(document.body.classList.contains("dark-theme")){
+        iconTheme.classList.remove("fa-moon");
+        iconTheme.classList.add("fa-sun");
+        brand.src = "brand-light.svg";
+        // pola.src = "images/pola-dark.svg";
+      } else {
+        iconTheme.classList.remove("fa-sun");
+        iconTheme.classList.add("fa-moon");
+        brand.src = "brand.svg";
+        // pola.src = "images/pola-light.svg";
+      }
+    }
+</script>
+
+</html>
