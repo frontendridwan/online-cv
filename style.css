@@ -166,7 +166,7 @@ body {
   padding: 10px 15px;
   color: var(--font-color-button);
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-right: 20px;
   border: 1px solid transparent;
   transition: 0.5s ease;
@@ -183,7 +183,7 @@ body {
   padding: 10px 15px;
   color: var(--primary-color);
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-right: 20px;
   border: 1px solid var(--primary-color);
   transition: 0.5s ease;
@@ -206,15 +206,49 @@ body {
 }
 
 .home-image {
+  display: flex;
+  justify-content: center;
   width: 50%;
   height: auto;
-  background-color: blue;
-  opacity: 0.2;
 }
+
+.home-image img {
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  transition: 1s ease;
+}
+
+.home-image img.bg-image1 {
+  width: 450px;
+  height: auto;
+}
+
+.home-image img.main-image {
+  width: 370px;
+  height: auto;
+}
+
+.home-image:hover img.bg-image1 {
+  transform: translateY(-5%);
+}
+
+.home-image:hover img.main-image {
+  transform: translateX(7%);
+}
+
 /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
   .home-title h1 {
     font-size: 40px;
+  }
+
+  .home-image img.bg-image1 {
+    width: 400px;
+  }
+
+  .home-image img.main-image {
+    width: 320px;
   }
 }
 
@@ -222,6 +256,7 @@ body {
 @media (max-width: 992px) {
 }
 
+/* Large devices (desktops, 952px and up) */
 @media (max-width: 952px) {
   .navbar-container ul li {
     margin: 0px 15px;
@@ -229,6 +264,14 @@ body {
 
   .home-container {
     width: 90%;
+  }
+
+  .home-image img.bg-image1 {
+    width: 370px;
+  }
+
+  .home-image img.main-image {
+    width: 290px;
   }
 }
 
@@ -245,6 +288,14 @@ body {
   .navbar-container ul li a,
   .navbar-container ul li i {
     font-size: 14px;
+  }
+
+  .home-image img.bg-image1 {
+    width: 330px;
+  }
+
+  .home-image img.main-image {
+    width: 250px;
   }
 }
 
@@ -278,15 +329,19 @@ body {
     flex-direction: column;
   }
 
+  .home {
+    height: 140vh;
+  }
+
   .home-content {
-    height: 50%;
+    height: 55%;
     width: auto;
-    background-color: red;
-    opacity: 0.2;
+    /* background-color: red;
+    opacity: 0.2; */
   }
 
   .home-image {
-    height: 50%;
+    height: 45%;
     width: auto;
     background-color: blue;
     opacity: 0.2;
