@@ -57,7 +57,7 @@ if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
-  brand.src[selectedBrand == 'assets/images/brand-light.svg' ? 'add' : 'remove'](brandTheme)
+  // brand.src[selectedBrand == 'assets/images/brand-light.svg' ? 'add' : 'remove'](brandTheme)
 }
 
 // Activate / deactivate the theme manually with the button
