@@ -132,7 +132,6 @@ img {
 
 .change-theme {
   font-size: 1.25rem;
-  /* font-size: 0.968rem; */
   color: var(--title-color);
   margin-right: var(--mb-1);
   cursor: pointer;
@@ -354,13 +353,13 @@ img {
   align-self: flex-end;
 }
 
-/* .home__images:hover img.bg-image1 {
+.home__images:hover img.bg-image1 {
   transform: translateY(-5%);
 }
 
 .home__images:hover img.main-image {
   transform: translateX(7%);
-} */
+}
 
 /*==================== BUTTONS ====================*/
 .button {
@@ -415,6 +414,34 @@ img {
   color: var(--first-color-alt);
 }
 
+/*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  opacity: 0.8;
+  padding: 0 0.3rem;
+  border-radius: 0.3rem;
+  z-index: var(--z-tooltip);
+  transition: 0.3s;
+}
+
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+  bottom: 2.2rem;
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Show scroll */
+.show-scroll {
+  bottom: 2rem;
+}
+
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -455,13 +482,24 @@ img {
   }
 
   .home__container {
-    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home__images img.bg-image1 {
+    width: auto;
+    height: 350px;
+    align-self: flex-end;
+  }
+
+  .home__images img.main-image {
+    width: auto;
+    height: 350px;
+    align-self: flex-end;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 968px;
+    max-width: 868px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -521,11 +559,54 @@ img {
 
   .home__container {
     row-gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .home__content {
     padding-top: 5.5rem;
     column-gap: 2rem;
+  }
+
+  .home__img {
+    align-items: flex-end;
+  }
+
+  .home__images img {
+    bottom: 0;
+  }
+
+  .home__images img.bg-image1 {
+    width: auto;
+    height: 430px;
+  }
+
+  .home__images img.main-image {
+    width: auto;
+    height: 430px;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .container {
+    max-width: 968px;
+  }
+
+  .home__img {
+    align-items: flex-end;
+  }
+
+  .home__images img {
+    bottom: 0;
+  }
+
+  .home__images img.bg-image1 {
+    width: auto;
+    height: 460px;
+  }
+
+  .home__images img.main-image {
+    width: auto;
+    height: 460px;
   }
 }
 
@@ -540,6 +621,7 @@ img {
   .home__img {
     align-items: flex-end;
   }
+
   .home__images img {
     bottom: 0;
   }
