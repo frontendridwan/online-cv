@@ -38,35 +38,53 @@ window.addEventListener('scroll', scrollUp)
 /*==================== DARK LIGHT THEME ====================*/ 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
-const iconTheme = 'uil-sun'
-const brand = document.getElementById("brand-logo");
-const brandTheme = "assets/images/brand-light.svg";
+const iconLight = 'uil-sun'
+const iconDark = 'uil-moon'
+const brand = document.getElementById("brand-logo")
+const iconTheme = document.getElementById("theme-button")
+const brandThemeLight = "assets/images/brand-light.svg"
+const brandThemeDark = "assets/images/brand.svg"
+
+themeButton.addEventListener('click', () => {
+  document.body.classList.toggle(darkTheme)
+
+  if (document.body.classList.contains(darkTheme)) {
+    iconTheme.classList.remove(iconDark)
+    iconTheme.classList.add(iconLight)
+    brand.src = brandThemeLight
+  } else {
+    iconTheme.classList.remove(iconLight)
+    iconTheme.classList.add(iconDark)
+    brand.src = brandThemeDark
+  }
+})
 
 // Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-const selectedBrand = localStorage.getItem('selected-brand')
+// const selectedTheme = localStorage.getItem('selected-theme')
+// const selectedIcon = localStorage.getItem('selected-icon')
+// const selectedBrand = localStorage.getItem('selected-brand')
 
 // We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
-const getCurrentBrand = () => brand.src.contains(brandTheme) ? 'assets/images/brand-light.svg' : 'assets/images/brand.svg'
+// const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+// const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+// const getCurrentBrand = () => brand.src.contains(brandTheme) ? 'assets/images/brand-light.svg' : 'assets/images/brand.svg'
 
 // We validate if the user previously chose a topic
-if (selectedTheme) {
+// if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+  // document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+  // themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
   // brand.src[selectedBrand == 'assets/images/brand-light.svg' ? 'add' : 'remove'](brandTheme)
-}
+// }
 
 // Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
+// themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
+    // document.body.classList.toggle(darkTheme)
+    // themeButton.classList.toggle(iconTheme)
+    // brand.src.toggle(brandTheme)
     // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-    localStorage.setItem('selected-brand', getCurrentBrand())
-})
+    // localStorage.setItem('selected-theme', getCurrentTheme())
+    // localStorage.setItem('selected-icon', getCurrentIcon())
+    // localStorage.setItem('selected-brand', getCurrentBrand())
+// })
