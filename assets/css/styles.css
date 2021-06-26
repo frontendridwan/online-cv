@@ -219,7 +219,6 @@ img {
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
-    /* top: var(--header-height); */
     top: -100%;
     left: 0;
     width: 100%;
@@ -381,16 +380,17 @@ img {
 .button__icon {
   font-size: 1.1rem;
   margin-left: var(--mb-0-5);
-  /* transition: 0.3s; */
+  transition: 0.3s;
 }
 
-.button--white {
+.button--whatsapp {
   background-color: #fff;
   color: var(--first-color);
 }
 
-.button--white:hover {
-  background-color: #fff;
+.button--whatsapp:hover {
+  background-color: #4fce5d;
+  color: #fff;
 }
 
 .button--flex {
@@ -566,7 +566,7 @@ img {
   position: relative;
   background-color: var(--container-color);
   padding: 3.5rem 0.5rem 1.25rem 1.5rem;
-  border-radius: 0.25rem;
+  border-radius: 0.45rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
 }
@@ -698,7 +698,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4rem 0 0 0;
+  margin: 5rem 0 0 0;
 }
 
 .portfolio__all-button {
@@ -787,32 +787,33 @@ img {
   padding-top: 2rem;
 }
 
-.footer__container {
-  row-gap: 3.5rem;
-}
-
 .footer__bg {
   background-color: var(--first-color-second);
   padding: 2rem 0 3rem;
 }
 
+.footer__container {
+  row-gap: 3.5rem;
+}
+
+.footer__content {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  row-gap: 2rem;
+}
+
 .footer__title {
   font-size: var(--h1-font-size);
-  margin-bottom: var(--mb-0-25);
+  margin-bottom: var(--mb-0-5);
+}
+
+.footer__description {
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-2);
 }
 
 .footer__subtitle {
-  font-size: var(--small-font-size);
-}
-
-.footer__links {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
-}
-
-.footer__link:hover {
-  color: var(--first-color-lighter);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
 }
 
 .footer__social {
@@ -824,14 +825,52 @@ img {
   color: var(--first-color-lighter);
 }
 
-.footer__copy {
+.footer__links {
+  margin-top: 1.5rem;
+}
+
+.footer__item {
+  margin-bottom: var(--mb-0-75);
+}
+
+.footer__link {
   font-size: var(--smaller-font-size);
+}
+
+.footer__link:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer__rights {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
   text-align: center;
-  color: var(--text-color-light);
-  margin-top: var(--mb-3);
+}
+
+.footer__copy {
+  font-size: var(--small-font-size);
+  text-align: center;
+  color: var(--first-color-lighter);
+}
+
+.footer__terms {
+  display: flex;
+  column-gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer__terms-link {
+  font-size: var(--small-font-size);
+  color: var(--first-color-lighter);
+}
+
+.footer__terms-link:hover {
+  color: var(--text-color);
 }
 
 .footer__title,
+.footer__description,
 .footer__subtitle,
 .footer__link,
 .footer__social {
@@ -938,11 +977,11 @@ img {
     align-self: flex-end;
   }
 
+  /* .footer__container */
   .about__container,
   .skills__container,
   .portfolio__content,
-  .project__container,
-  .footer__container {
+  .project__container {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1008,6 +1047,27 @@ img {
     margin-left: auto;
   }
 
+  /* active link */
+  .active-link::after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid var(--first-color);
+    width: 75%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+  }
+
+  .nav__item .nav__link:hover::after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid var(--first-color);
+    width: 75%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+  }
+
   .change-theme {
     margin: 0;
   }
@@ -1041,7 +1101,7 @@ img {
   }
 
   .about__container {
-    column-gap: 5rem;
+    column-gap: 2rem;
   }
 
   .about__img {
@@ -1086,6 +1146,7 @@ img {
 
   .project__bg {
     background: none;
+    padding: 2rem 0 2rem 0;
   }
 
   .project__container {
@@ -1100,25 +1161,9 @@ img {
     padding-top: 0.8rem;
   }
 
-  .footer__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer__bg {
-    padding: 3rem 0 3.5rem;
-  }
-
-  .footer__links {
+  .footer__rights {
     flex-direction: row;
-    column-gap: 2rem;
-  }
-
-  .footer__socials {
-    justify-self: flex-end;
-  }
-
-  .footer__copy {
-    margin-top: 4.5rem;
+    justify-content: space-between;
   }
 }
 
@@ -1181,7 +1226,7 @@ img {
   }
 
   .portfolio__all-project {
-    margin: 6rem 0 0 0;
+    margin: 7rem 0 0 0;
   }
 
   .swiper-portfolio-icon {
@@ -1198,5 +1243,9 @@ img {
 
   .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: -4.5rem;
+  }
+
+  .footer__content {
+    justify-items: center;
   }
 }
